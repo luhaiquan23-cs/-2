@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>音乐播放器</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Custom slider styling to match the thin sleek look */
+      input[type=range] {
+        -webkit-appearance: none;
+        background: transparent;
+      }
+      input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        height: 12px;
+        width: 12px;
+        border-radius: 50%;
+        background: #10b981; /* Emerald 500 */
+        cursor: pointer;
+        margin-top: -5px; 
+      }
+      input[type=range]::-moz-range-thumb {
+        height: 12px;
+        width: 12px;
+        border: none;
+        border-radius: 50%;
+        background: #10b981;
+        cursor: pointer;
+      }
+      input[type=range]::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 2px;
+        cursor: pointer;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 1px;
+      }
+      input[type=range]::-moz-range-track {
+        width: 100%;
+        height: 2px;
+        cursor: pointer;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 1px;
+      }
+      /* Custom scrollbar for playlist if needed */
+      .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+      }
+      .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+      }
+      
+      @keyframes spin-slow {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      .animate-spin-slow {
+        animation: spin-slow 20s linear infinite;
+      }
+      .paused-animation {
+        animation-play-state: paused;
+      }
+
+      /* Background Dynamic Effect */
+      @keyframes move-bg {
+        0% {
+          transform: scale(1.1) translate(0, 0);
+        }
+        25% {
+          transform: scale(1.15) translate(-1%, 1%);
+        }
+        50% {
+          transform: scale(1.1) translate(-2%, 0);
+        }
+        75% {
+          transform: scale(1.15) translate(-1%, -1%);
+        }
+        100% {
+          transform: scale(1.1) translate(0, 0);
+        }
+      }
+      .animate-bg-dynamic {
+        animation: move-bg 60s ease-in-out infinite;
+      }
+    </style>
+
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3"
+  }
+}
+</script>
+  <script type="module" crossorigin src="./assets/index-Qv5Lc7t7.js"></script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
